@@ -11,7 +11,7 @@ pipeline {
     }
     stage('Push image') {
         withDockerRegistry([ credentialsId: "DockerHub Credentials", url: "" ]) {
-        bat "docker push vistannextgenhyd/ros1:testing"
+        sh "docker push vistannextgenhyd/ros1:testing"
         }
   }
 }
