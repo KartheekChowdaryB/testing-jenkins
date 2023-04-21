@@ -1,1 +1,1 @@
-FROM vistannextgenhyd/ros1:pi_onboot_int
+FROM ubuntu:20.04
