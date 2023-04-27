@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building..'
+                sh 'docker pull ubuntu:20.04'
             }
         }
         stage('Test') {
