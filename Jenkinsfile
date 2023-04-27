@@ -9,7 +9,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'docker build -t lloydmatereke/jenkins-docker-hub .'
+        echo 'docker build -t lloydmatereke/jenkins-docker-hub .'
       }
     }
   }
