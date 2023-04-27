@@ -5,7 +5,7 @@ pipeline {
 
     stages {
         stage('Build') {
-            agent any
+            agent docker
                 
             steps {
                 sh 'docker build .'
