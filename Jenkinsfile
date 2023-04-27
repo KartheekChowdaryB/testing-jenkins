@@ -1,23 +1,14 @@
-#!groovy
-
 pipeline {
-	agent none
-  stages {
-  	stage('docker Install') {
-    	agent {
-      	docker {
-        	image 'ubuntu:20.04'
-        }
-      }
-      steps {
-      	echo 'done'
-      }
-    }
-    stage('Docker Build') {
-    	agent any
-      steps {
-      	sh 'docker build -t ubuntu:latest .'
-      }
-    }
+  agent any
+  options {
+    buildDiscarder(logRotator(numToKeepStr: '5'))
   }
-}
+  environment {
+    DOCKERHUB_CREDENTIALS = credentials('dockerhub')
+  }
+  stages {
+    stage('Build') {
+      steps {
+        sh 'docker build -t lloydmatereke/jenkins-docker-hub .'
+      }
+    }
