@@ -5,8 +5,11 @@ pipeline {
 
     stages {
         stage('Build') {
+            agent any
+                
             steps {
-                sh 'docker pull ubuntu:20.04'
+                sh 'docker pull ubuntu:20:04'
+                
             }
         }
         stage('Test') {
