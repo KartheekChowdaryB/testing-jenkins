@@ -8,7 +8,7 @@ pipeline {
             agent any
                 
             steps {
-                sh 'docker pull ubuntu:20:04'
+                sh 'docker build .'
                 
             }
         }
