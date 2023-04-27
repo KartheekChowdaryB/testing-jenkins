@@ -1,26 +1,23 @@
 #!groovy
 
 pipeline {
-    agent any
-
-    stages {
-        stage('Build') {
-            agent docker
-                
-            steps {
-                sh 'docker build .'
-                
-            }
+	agent none
+  stages {
+  	stage('docker Install') {
+    	agent {
+      	docker {
+        	image 'ubuntu:20.04'
         }
-        stage('Test') {
-            steps {
-                echo 'Testing..'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
-            }
-        }
+      }
+      steps {
+      	echo 'done'
+      }
     }
+    stage('Docker Build') {
+    	agent any
+      steps {
+      	sh 'docker build -t ubuntu:latest .'
+      }
+    }
+  }
 }
