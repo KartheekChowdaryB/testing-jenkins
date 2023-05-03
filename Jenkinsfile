@@ -7,18 +7,7 @@ node('agent1') {
 node('agent1') {
     stage('GetNodeName') {
     def node_name = "${NODE_NAME}"
-    echo "The Node Name is: ${node_name}"
+    sh "docker images"
     }
 }
-pipeline {
-    agent('agent1') {
-        docker { image 'node:18.16.0-alpine' }
-    }
-    stages {
-        stage('Test') {
-            steps {
-                sh 'docker build .'
-            }
-        }
-    }
-}
+
