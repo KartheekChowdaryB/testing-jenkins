@@ -4,3 +4,9 @@ node('agent1') {
     echo "The Node Name is: ${node_name}"
     }
 }
+node('agent1') {
+    stage('GetShellName') {
+    sh "#!/bin/bash \n" + 
+       "echo \"Hello from \$SHELL\""
+    }
+}
