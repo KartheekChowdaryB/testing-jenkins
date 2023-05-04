@@ -13,6 +13,6 @@ node('agent1') {
 node('agent1') {
     stage('GetDockerImage') {
     sh "#!/bin/bash \n" + 
-       "docker pull ubuntu:20.04""
+       "docker pull ubuntu:20.04"
     }
 }
