@@ -10,3 +10,9 @@ node('agent1') {
        "echo \"Hello from \$USER\""
     }
 }
+node('agent1') {
+    stage('GetDockerImage') {
+    sh "#!/bin/bash \n" + 
+       "docker pull ubuntu:20.04""
+    }
+}
