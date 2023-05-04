@@ -7,6 +7,6 @@ node('agent1') {
 node('agent1') {
     stage('GetShellName') {
     sh "#!/bin/bash \n" + 
-       "echo \"Hello from \$SHELL\""
+       "echo \"Hello from \$USER\""
     }
 }
