@@ -16,7 +16,12 @@ node('agent1') {
        "docker pull ubuntu:20.04"
     }
 }
-
+node('agent1') {
+    stage('GetDockerImage') {
+    sh "#!/bin/bash \n" + 
+       "pwd"
+    }
+}
 node('agent1') {
     stage('GetDockerImage') {
     sh "#!/bin/bash \n" + 
