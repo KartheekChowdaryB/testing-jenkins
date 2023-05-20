@@ -24,6 +24,6 @@ node('agent1') {
 node('agent1') {
     stage('GetDockerImage') {
     sh "#!/bin/bash \n" + 
-       "docker build -t testing:testjenkinsv1 ."
+       "docker build -t testing:testjenkinsv2 ."
     }
 }
