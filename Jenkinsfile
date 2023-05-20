@@ -17,9 +17,8 @@ node('agent1') {
     }
 }
 node('agent1') {
-    stage('GetDockerImage') {
-    sh "#!/bin/bash \n" + 
-       "pwd"
+    stage('git scm') {
+    checkout scm
     }
 }
 node('agent1') {
