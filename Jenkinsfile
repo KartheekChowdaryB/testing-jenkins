@@ -11,12 +11,6 @@ node('agent1') {
     }
 }
 node('agent1') {
-    stage('GetDockerImage') {
-    sh "#!/bin/bash \n" + 
-       "docker pull ubuntu:20.04"
-    }
-}
-node('agent1') {
     stage('git scm') {
     checkout scm
     }
