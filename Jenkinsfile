@@ -16,8 +16,14 @@ node('agent1') {
     }
 }
 node('agent1') {
-    stage('GetDockerImage') {
+    stage('BuildDockerImage') {
     sh "#!/bin/bash \n" + 
-       "docker build -t testing:testjenkinsv2 ."
+       "docker build -t vistannextgenhyd/ros1:testjenkinsv1 ."
+    }
+}
+node('agent1') {
+    stage('PushDockerImage') {
+    sh "#!/bin/bash \n" + 
+       "docker push vistannextgenhyd/ros1:testjenkinsv1"
     }
 }
