@@ -1,1 +1,1 @@
-FROM vistannextgenhyd/ros1:sbc_onboot_ext_noetic
+FROM ubuntu:20.04
