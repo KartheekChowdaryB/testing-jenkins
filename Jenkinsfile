@@ -1,27 +1,27 @@
-node('kartheek') {
+node('laptop') {
     stage('GetNodeName') {
     def node_name = "${NODE_NAME}"
     echo "The testing the Node Name is : ${node_name}"
     }
 }
-node('kartheek') {
+node('laptop') {
     stage('GetShellName') {
     sh "#!/bin/bash \n" + 
        "echo \"Hello from \$USER\""
     }
 }
-node('kaartheek') {
+node('laptop') {
     stage('git scm') {
     checkout scm
     }
 }
-node('kartheek') {
+node('laptop') {
     stage('BuildDockerImage') {
     sh "#!/bin/bash \n" + 
        "docker build -t vistannextgenhyd/ros1:testjenkinsv1 ."
     }
 }
-node('kartheek') {
+node('laptop') {
     stage('PushDockerImage') {
     sh "#!/bin/bash \n" + 
        "docker push vistannextgenhyd/ros1:testjenkinsv1"
