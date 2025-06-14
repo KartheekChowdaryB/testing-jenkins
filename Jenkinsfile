@@ -18,7 +18,7 @@ node('laptop') {
 node('laptop') {
     stage('BuildDockerImage') {
     sh "#!/bin/bash \n" + 
-       "docker build -t vistannextgenhyd/ros1:testjenkinsv1 ."
+       "docker build -t testingtoday:v1 ."
     }
 }
 node('laptop') {
