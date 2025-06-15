@@ -1,7 +1,7 @@
 node('poorna') {
     stage('GetNodeName') {
         def node_name = "${NODE_NAME}"
-        echo "The testing the Jenkins Node: ${node_name}"
+        echo "The testing the JenkinsNode: ${node_name}"
     }
 }
 
